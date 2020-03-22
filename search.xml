@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>如何在15分钟内熟练掌握Markdown所有语法</title>
+    <url>/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8markdown.html</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=520 height=86 src="//music.163.com/outchain/player?type=2&id=785887&auto=0&height=66"></iframe>
+
+<h1 id="一-认识Markdown"><a href="#一-认识Markdown" class="headerlink" title="一.认识Markdown"></a>一.认识Markdown</h1><blockquote>
+<p>Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯（英语：John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。—维基百科</p>
+</blockquote>
+<p>看完是不是有点懵，用民间的说法就是<strong>其实markdown就是一个文本编辑器，让人可以不依赖鼠标就可以编写出你想要格式的文本编辑器。</strong></p>
+<h1 id="二-基础语法"><a href="#二-基础语法" class="headerlink" title="二.基础语法"></a>二.基础语法</h1><p>##1. 标题</p>
+<h3 id="Markdown-的标题只需要在文本前面加上-就可以了，几级标题加几个＃-最多支持6级标题"><a href="#Markdown-的标题只需要在文本前面加上-就可以了，几级标题加几个＃-最多支持6级标题" class="headerlink" title="Markdown 的标题只需要在文本前面加上#就可以了，几级标题加几个＃,最多支持6级标题."></a>Markdown 的标题只需要在文本前面加上#就可以了，几级标题加几个＃,最多支持6级标题.</h3><blockquote>
+<p> #一级标题<br>##二级标题<br>###三级标题<br>####四级标题<br>#####五级标题<br>######六级标题</p>
+</blockquote>
+<h2 id="2-列表"><a href="#2-列表" class="headerlink" title="2.列表"></a>2.列表</h2><h3 id="Markdown支持两种列表-有序列表-和-无序列表"><a href="#Markdown支持两种列表-有序列表-和-无序列表" class="headerlink" title="Markdown支持两种列表 有序列表 和 无序列表"></a>Markdown支持两种列表 <strong>有序列表</strong> 和 <strong>无序列表</strong></h3><h4 id="有序列表—就在文字前面加上编号和-就行了"><a href="#有序列表—就在文字前面加上编号和-就行了" class="headerlink" title="有序列表—就在文字前面加上编号和.就行了"></a>有序列表—就在文字前面加上编号和.就行了</h4><h5 id="例如"><a href="#例如" class="headerlink" title="例如:"></a>例如:</h5><blockquote>
+<ol>
+<li>有序列表1</li>
+<li>有序列表2</li>
+<li>有序列表3</li>
+</ol>
+</blockquote>
+<h4 id="无序列表-—文字前面加上-“-“-就ok了"><a href="#无序列表-—文字前面加上-“-“-就ok了" class="headerlink" title="无序列表 —文字前面加上 “ - “ 就ok了"></a>无序列表 —文字前面加上 “ - “ 就ok了</h4><blockquote>
+<ul>
+<li>无序列表1  </li>
+<li>无序列表2</li>
+<li>无序列表3</li>
+</ul>
+</blockquote>
+<h2 id="3-斜体和加粗"><a href="#3-斜体和加粗" class="headerlink" title="3.斜体和加粗"></a>3.斜体和加粗</h2><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><h4 id="文字左右各一个”-“-就完成了-例如-斜体"><a href="#文字左右各一个”-“-就完成了-例如-斜体" class="headerlink" title="文字左右各一个” * “ 就完成了   例如: * 斜体 *"></a>文字左右各一个” * “ 就完成了   例如: * 斜体 *</h4><blockquote>
+<p><em>斜体</em></p>
+</blockquote>
+<h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><h4 id="文字左右各两个”-“就完成了-例如-粗体"><a href="#文字左右各两个”-“就完成了-例如-粗体" class="headerlink" title="文字左右各两个” * “就完成了    例如: ** 粗体 **"></a>文字左右各两个” * “就完成了    例如: ** 粗体 **</h4><blockquote>
+<p><strong>粗体</strong><br>##4. 引用</p>
+</blockquote>
+<h3 id="我们可能需要在文章中引用别人的文章-句子-代码……-这个标签就尤为重要了"><a href="#我们可能需要在文章中引用别人的文章-句子-代码……-这个标签就尤为重要了" class="headerlink" title="我们可能需要在文章中引用别人的文章,句子,代码…….这个标签就尤为重要了"></a>我们可能需要在文章中引用别人的文章,句子,代码…….这个标签就尤为重要了</h3><h3 id="我们只需要在前面加上-“-gt-“就完成了"><a href="#我们只需要在前面加上-“-gt-“就完成了" class="headerlink" title="我们只需要在前面加上 “ &gt; “就完成了."></a>我们只需要在前面加上 “ &gt; “就完成了.</h3><blockquote>
+<p> 这个是效果</p>
+</blockquote>
+<h2 id="5-代码块"><a href="#5-代码块" class="headerlink" title="5. 代码块"></a>5. 代码块</h2><h3 id="对于程序员来说-能用Markdown书写代码尤为重要-嘻嘻-毕竟创作之初就是用来书写代码的嘛"><a href="#对于程序员来说-能用Markdown书写代码尤为重要-嘻嘻-毕竟创作之初就是用来书写代码的嘛" class="headerlink" title="对于程序员来说,能用Markdown书写代码尤为重要(嘻嘻~ 毕竟创作之初就是用来书写代码的嘛)"></a>对于程序员来说,能用Markdown书写代码尤为重要(嘻嘻~ 毕竟创作之初就是用来书写代码的嘛)</h3><h4 id="那么格式是"><a href="#那么格式是" class="headerlink" title="那么格式是:"></a>那么格式是:</h4><blockquote>
+<p> <strong>``` key</strong><br>   <strong>代码块</strong><br>   <strong>```</strong></p>
+</blockquote>
+<p>例如:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"hello,world"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>language</th>
+<th>key</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C++</td>
+<td>cpp</td>
+</tr>
+<tr>
+<td>CSS</td>
+<td>css</td>
+</tr>
+<tr>
+<td>Django</td>
+<td>django</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>http</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>java</td>
+</tr>
+<tr>
+<td>XML,HTML</td>
+<td>xml</td>
+</tr>
+</tbody></table>
+<h2 id="6-分割线"><a href="#6-分割线" class="headerlink" title="6.分割线"></a>6.分割线</h2><h3 id="三个或者三个以上的-或者-都可以。"><a href="#三个或者三个以上的-或者-都可以。" class="headerlink" title="三个或者三个以上的 - 或者 * 都可以。"></a>三个或者三个以上的 - 或者 * 都可以。</h3><hr>
+<h4 id="这个是效果"><a href="#这个是效果" class="headerlink" title="这个是效果"></a>这个是效果</h4><hr>
+<h2 id="7-插入图片"><a href="#7-插入图片" class="headerlink" title="7.插入图片"></a>7.插入图片</h2><h3 id="为了使文章更有说服力，很多人会使用图片来加强理解"><a href="#为了使文章更有说服力，很多人会使用图片来加强理解" class="headerlink" title="为了使文章更有说服力，很多人会使用图片来加强理解"></a>为了使文章更有说服力，很多人会使用图片来加强理解</h3><blockquote>
+<p>![图片alt](图片地址 ‘’图片title’’)<br>图片alt:图片下面的文字<br>图片地址：就是很单纯的图片地址<br>图片title： 鼠标移动到图片上面时候显示的东西</p>
+</blockquote>
+<p><img src="/images/markdown.jpg" alt="就是这个样子"></p>
+<h2 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h2><h3 id="上面的语言和关键字就是用表格实现的"><a href="#上面的语言和关键字就是用表格实现的" class="headerlink" title="上面的语言和关键字就是用表格实现的"></a>上面的语言和关键字就是用表格实现的</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">name | <span class="number">111</span> | <span class="number">222</span> | <span class="number">333</span> | <span class="number">444</span></span><br><span class="line">- | :-: | :-: | :-: | -:</span><br><span class="line">aaa | bbb | ccc | ddd | eee| </span><br><span class="line">fff | ggg| hhh | iii | <span class="number">000</span>|</span><br></pre></td></tr></table></figure>
+<p>呈现效果就是这样的：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th align="center">111</th>
+<th align="center">222</th>
+<th align="center">333</th>
+<th align="right">444</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>aaa</td>
+<td align="center">bbb</td>
+<td align="center">ccc</td>
+<td align="center">ddd</td>
+<td align="right">eee</td>
+</tr>
+<tr>
+<td>fff</td>
+<td align="center">ggg</td>
+<td align="center">hhh</td>
+<td align="center">iii</td>
+<td align="right">000</td>
+</tr>
+</tbody></table>
+<h1 id="三-总结"><a href="#三-总结" class="headerlink" title="三.总结"></a>三.总结</h1><h3 id="这些是Markdown基础用法，如何各位在生活或工作中还需要更全面的Markdown的教学，请自行查案看Markdown官方文档-https-markdown-zh-readthedocs-io-en-latest"><a href="#这些是Markdown基础用法，如何各位在生活或工作中还需要更全面的Markdown的教学，请自行查案看Markdown官方文档-https-markdown-zh-readthedocs-io-en-latest" class="headerlink" title="这些是Markdown基础用法，如何各位在生活或工作中还需要更全面的Markdown的教学，请自行查案看Markdown官方文档 https://markdown-zh.readthedocs.io/en/latest/"></a>这些是Markdown基础用法，如何各位在生活或工作中还需要更全面的Markdown的教学，请自行查案看Markdown官方文档 <a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://markdown-zh.readthedocs.io/en/latest/</a></h3>]]></content>
+      <categories>
+        <category>语言</category>
+      </categories>
+      <tags>
+        <tag>基础语法</tag>
+      </tags>
+  </entry>
+</search>
