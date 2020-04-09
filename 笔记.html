@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="学习笔记软件的简单介绍软件架构分两种1.C&#x2F;S 架构 c 表示客户端（客户用来使用软件） s 表示服务器（服务器用来处理业务逻辑）特点：    1.客户端与服务器同时更新    2.软件使用前必须安装    3.C&#x2F;S框架不能跨平台使用    4.C&#x2F;S使用的是自有协议 保密较好  2.B&#x2F;S 架构 B&#x2F;S本质也是C&#x2F;S只不过是用浏览器为载体特点：    1.软件不必安装 直接用浏览器检索就可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记">
+<meta property="og:url" content="http://egoist-ture-love.github.io/%E7%AC%94%E8%AE%B0.html">
+<meta property="og:site_name" content="egoist的blog">
+<meta property="og:description" content="学习笔记软件的简单介绍软件架构分两种1.C&#x2F;S 架构 c 表示客户端（客户用来使用软件） s 表示服务器（服务器用来处理业务逻辑）特点：    1.客户端与服务器同时更新    2.软件使用前必须安装    3.C&#x2F;S框架不能跨平台使用    4.C&#x2F;S使用的是自有协议 保密较好  2.B&#x2F;S 架构 B&#x2F;S本质也是C&#x2F;S只不过是用浏览器为载体特点：    1.软件不必安装 直接用浏览器检索就可以">
+<meta property="article:published_time" content="2020-04-09T07:29:00.000Z">
+<meta property="article:modified_time" content="2020-04-09T07:32:36.028Z">
+<meta property="article:author" content="egoist-ture-love">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://egoist-ture-love.github.io/笔记.html"/>
+
+
+
+
+
+  <title>学习笔记 | egoist的blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">egoist的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">从零成长为一个专业人士</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://egoist-ture-love.github.io/%E7%AC%94%E8%AE%B0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="egoist-ture-love">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5e7394c3e83c3a1e3ab37029.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="egoist的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-09T15:29:00+08:00">
+                2020-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,402
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><h2 id="软件的简单介绍"><a href="#软件的简单介绍" class="headerlink" title="软件的简单介绍"></a>软件的简单介绍</h2><h3 id="软件架构分两种"><a href="#软件架构分两种" class="headerlink" title="软件架构分两种"></a>软件架构分两种</h3><h4 id="1-C-S-架构"><a href="#1-C-S-架构" class="headerlink" title="1.C/S 架构"></a>1.C/S 架构</h4><blockquote>
+<p>c 表示客户端（客户用来使用软件） s 表示服务器（服务器用来处理业务逻辑）<br>特点：<br>    1.客户端与服务器同时更新<br>    2.软件使用前必须安装<br>    3.C/S框架不能跨平台使用<br>    4.C/S使用的是自有协议 保密较好</p>
+</blockquote>
+<h4 id="2-B-S-架构"><a href="#2-B-S-架构" class="headerlink" title="2.B/S 架构"></a>2.B/S 架构</h4><blockquote>
+<p>B/S本质也是C/S只不过是用浏览器为载体<br>特点：<br>    1.软件不必安装 直接用浏览器检索就可以<br>    2.软件更新时客户端不必更新<br>    3.可以跨平台，只要系统中有浏览器就可以使用<br>    4.B/S使用的是http协议相对来说不是那么安全</p>
+</blockquote>
+<h2 id="软件开发流程"><a href="#软件开发流程" class="headerlink" title="软件开发流程"></a>软件开发流程</h2><blockquote>
+<p>网页设计师根据要求设计软件 –&gt; 前端工程师将设计做成静态网页 –&gt; 后台工程师将静态网页修改为动态网页</p>
+</blockquote>
+<h2 id="主要学习内容"><a href="#主要学习内容" class="headerlink" title="主要学习内容"></a>主要学习内容</h2><blockquote>
+<p>结构html 表现css  行为 javascrip</p>
+</blockquote>
+<h3 id="HTML是什么"><a href="#HTML是什么" class="headerlink" title="HTML是什么"></a>HTML是什么</h3><blockquote>
+<p>HTML是超文本标记语言</p>
+<blockquote>
+<p>文本是指只能显示文字 图片音频等一概用不了<br>而超文本可以使我们跳转到非文本语言<br>标记就是标签的意思</p>
+</blockquote>
+</blockquote>
+<h3 id="标准的HTML结构"><a href="#标准的HTML结构" class="headerlink" title="标准的HTML结构"></a>标准的HTML结构</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--   这个是html的注释并不会在页面中显示--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>    <span class="comment">&lt;!-- html根目录 一个html只能有一个根目录--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span>   <span class="comment">&lt;!--head标签内容不会直接页面显示 但是会帮助浏览器检索 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span> <span class="tag">&lt;/<span class="name">title</span>&gt;</span> <span class="comment">&lt;!-- 网页的标题标签 默认显示在浏览器标题栏中，搜索引擎会率先检索这个中的内容，title是对搜索引擎中最重要的内容，会影响在搜索引擎的排名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span> 这是一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><blockquote>
+<p>属性：通过属性来设置标签和处理标签中的内容，可以在开始标签中加内容 属性就是一个名值对的内容  属性名 = “属性值”</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span> = <span class="string">"red"</span>&gt;</span>一级<span class="tag">&lt;/<span class="name">font</span>&gt;</span>标题 <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以查看手册来学习</p>
+<h4 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h4><blockquote>
+<p>需要让浏览器知道是哪种格式防止进入怪异模式<br>需要在html前面加入<!doctype html> doctype大小写都可以</p>
+</blockquote>
+<h3 id="各种标签"><a href="#各种标签" class="headerlink" title="各种标签"></a>各种标签</h3><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>html有6种标题 和 markdown一样 </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span><span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>虽然大小是可以调整的但是重要程度是无法改变的，浏览器检索完title就检索h1</p>
+<h4 id="p标签"><a href="#p标签" class="headerlink" title="p标签"></a>p标签</h4><blockquote>
+<p>p标签是段落标签 表示一段话</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 这是一段<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是另一段<span class="tag">&lt;/<span class="name">P</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>html中空格和回车无论多少都当作一个空格 换行有固定的标签</p>
+</blockquote>
+<h4 id="br标签"><a href="#br标签" class="headerlink" title="br标签"></a>br标签</h4><blockquote>
+<p>br标签是一个回车标签，也是自动结束标签,&lt;标签名 空格/&gt;</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 这是一段<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    这是另一段<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="hr标签"><a href="#hr标签" class="headerlink" title="hr标签"></a>hr标签</h4><blockquote>
+<p>hr也是一个自结束标签，是一条分割线</p>
+</blockquote>
+<h4 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h4><blockquote>
+<p>用实体来表示特殊字符<br>语法：&amp;实体名字；</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">＞ <span class="symbol">&amp;lt;</span></span><br><span class="line">＜ <span class="symbol">&amp;gt;</span></span><br><span class="line">空格 <span class="symbol">&amp;nbsp;</span></span><br><span class="line">版权符号 <span class="symbol">&amp;copy;</span></span><br></pre></td></tr></table></figure>
+<p>具体查手册吧</p>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span> = <span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>img 是一个自解数标签<br>属性src:表示外部图片路径<br>可以使用../来返回上一级目录，有几集目录返回几集，下级目录 文件名/<br>alt:设置图片不能显示时候对图片描述<br>width:图片的宽度以像素px为单位<br>height:图片的高度以像素px为单位</p>
+</blockquote>
+<h4 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h4><p>meta标签可以设置网页中关键字</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"javascrip,html,前端"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>meta标签可以设置网页中的描述</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"小白的学习"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>meta标签可以设置重定向 3秒后跳转</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"3;url=http://egoist.ltd/"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="内联框架"><a href="#内联框架" class="headerlink" title="内联框架"></a>内联框架</h4><blockquote>
+<p>使用内联框架可以引用一个外部页面<br>使用iframe开创建内联框架 ，但是内联框架中的内容不会被浏览器检索<br>属性：<br>src<br>width<br>height<br>name:可以进行命名</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://egoist.ltd/"</span> <span class="attr">name</span> =<span class="string">"blog"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h4><blockquote>
+<p>a标签是超链接标签<br>属性是href标签指向相对路径或者完整地址 </p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> =<span class="string">"http://egoist.ltd/"</span>&gt;</span>这是我的blog <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>a标签中打开网页可以在原页面打开，也可以新开打开</p>
+<blockquote>
+<p>target=”_self”在当前页面打开<br>target=”_blank”新开页面打开<br>也可以设置一个name打开内联页面<br>如果不知道跳转的页面用#表示</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> =<span class="string">"http://egoist.ltd/"</span> <span class="attr">target</span>=<span class="string">"_self"</span> <span class="attr">name</span>=<span class="string">"blog"</span> &gt;</span>这是我的blog <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果不知道跳转的页面用#表示</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> =<span class="string">"#"</span> <span class="attr">target</span>=<span class="string">"_self"</span> <span class="attr">name</span>=<span class="string">"blog"</span> &gt;</span>这是我的blog <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果使用#占用点击时候会跳转到顶部<br>跳转邮箱</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> =<span class="string">"mailto:邮箱地址"</span> <span class="attr">target</span>=<span class="string">"_self"</span> <span class="attr">name</span>=<span class="string">"blog"</span> &gt;</span>这是我的blog <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="center标签"><a href="#center标签" class="headerlink" title="center标签"></a>center标签</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>中间是居中的内容<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="id属性"><a href="#id属性" class="headerlink" title="id属性"></a>id属性</h4><p>每个html都可以定义一个id属性，跳转的话可以直接用id后的名字</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>  <span class="attr">id</span>=<span class="string">"bottom"</span><span class="attr">href</span> =<span class="string">"#"</span> <span class="attr">target</span>=<span class="string">"_self"</span> <span class="attr">name</span>=<span class="string">"blog"</span> &gt;</span>这是我的blog <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="乱码"><a href="#乱码" class="headerlink" title="乱码"></a>乱码</h3><blockquote>
+<p>有时候大家会在编译时遇见乱码等情况，本质上是编码与解码的不同意导致的。<br>常见的编码ASCII,ISO-8859-1,GBK,GB2312,UTF-8,ANSI<br>中国的浏览器默认采用GB2312<br>所以你要告诉浏览器你是什么编码</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>    </span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span>   <span class="comment">&lt;!-- 表示编码是utf-8编码的 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span> <span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span> 这是一级标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>学习笔记</a></p>
+  <p><span>文章作者:</span>egoist-ture-love</a></p>
+  <p><span>发布时间:</span>2020年04月09日 - 15:29:00</p>
+  <p><span>最后更新:</span>2020年04月09日 - 15:32:36</p>
+  <p><span>原始链接:</span><a href="/%E7%AC%94%E8%AE%B0.html" title="学习笔记">http://egoist-ture-love.github.io/%E7%AC%94%E8%AE%B0.html</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://egoist-ture-love.github.io/%E7%AC%94%E8%AE%B0.html"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+    </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    egoist-ture-love
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://egoist-ture-love.github.io/%E7%AC%94%E8%AE%B0.html" title="学习笔记">http://egoist-ture-love.github.io/%E7%AC%94%E8%AE%B0.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="next" title="学习笔记">
+                <i class="fa fa-chevron-left"></i> 学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://pic.downk.cc/item/5e7394c3e83c3a1e3ab37029.jpg"
+                alt="egoist-ture-love" />
+            
+              <p class="site-author-name" itemprop="name">egoist-ture-love</p>
+              <p class="site-description motion-element" itemprop="description">享受从零到一的美好</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/egoist-ture-love" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://space.bilibili.com/12071728" target="_blank" title="bilibili">
+                      
+                        <i class="fa fa-fw fa-film"></i>bilibili</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/nio-70-86" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学习笔记"><span class="nav-number">1.</span> <span class="nav-text">学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的简单介绍"><span class="nav-number">1.1.</span> <span class="nav-text">软件的简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件架构分两种"><span class="nav-number">1.1.1.</span> <span class="nav-text">软件架构分两种</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-C-S-架构"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1.C&#x2F;S 架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-B-S-架构"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">2.B&#x2F;S 架构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件开发流程"><span class="nav-number">1.2.</span> <span class="nav-text">软件开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要学习内容"><span class="nav-number">1.3.</span> <span class="nav-text">主要学习内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML是什么"><span class="nav-number">1.3.1.</span> <span class="nav-text">HTML是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准的HTML结构"><span class="nav-number">1.3.2.</span> <span class="nav-text">标准的HTML结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html5"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">html5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种标签"><span class="nav-number">1.3.3.</span> <span class="nav-text">各种标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标题"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#p标签"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">p标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#br标签"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">br标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hr标签"><span class="nav-number">1.3.3.4.</span> <span class="nav-text">hr标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实体"><span class="nav-number">1.3.3.5.</span> <span class="nav-text">实体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片"><span class="nav-number">1.3.3.6.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#meta标签"><span class="nav-number">1.3.3.7.</span> <span class="nav-text">meta标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内联框架"><span class="nav-number">1.3.3.8.</span> <span class="nav-text">内联框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#a标签"><span class="nav-number">1.3.3.9.</span> <span class="nav-text">a标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#center标签"><span class="nav-number">1.3.3.10.</span> <span class="nav-text">center标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#id属性"><span class="nav-number">1.3.3.11.</span> <span class="nav-text">id属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#乱码"><span class="nav-number">1.3.4.</span> <span class="nav-text">乱码</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">egoist-ture-love</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">3.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
